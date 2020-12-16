@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    {% block styles %}
+    {% endblock %}
     <title>Task Manager</title>
 </head>
 <body>
@@ -11,5 +18,14 @@
     {% block content %}
     {% endblock %}
 
+<!-- Minified jQuery -->
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<!-- Custom injected scripts -->
+{% block scripts %}
+{% endblock %}
+    
 </body>
 </html>
