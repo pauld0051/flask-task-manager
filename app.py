@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 def get_tasks():
     tasks = list(mongo.db.tasks.find())
     return render_template("tasks.html", tasks=tasks)
-    
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -86,6 +86,11 @@ def profile(username):
 
     return redirect(url_for("login"))
     
+
+@app.route("/add_task")
+def add_task():
+    return render_template("add_task.html")
+
 
 @app.route("/logout")
 def logout():
