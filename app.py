@@ -85,11 +85,12 @@ def profile(username):
         return render_template("profile.html", username=username)
 
     return redirect(url_for("login"))
-    
+
 
 @app.route("/add_task")
 def add_task():
-    return render_template("add_task.html")
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("add_task.html", categories=categories)
 
 
 @app.route("/logout")
